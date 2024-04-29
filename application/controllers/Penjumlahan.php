@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Biodata extends CI_Controller {
+class Penjumlahan extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,18 +19,18 @@ class Biodata extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 	public function index()
-	{		
-		$this->load->view('form_biodata_view');
-	}
-
-	public function form()
 	{
-		$data = array(
-			'nama' => $this->input->post('nama'),
-			'kelas' => $this->input->post('kelas'),
-			'nim' => $this->input->post('nim')
-		);
+		// $this->load->controller('penjumlah');
+	}
+	
+	public function jumlah($nilai1, $nilai2)
+	{
+		$this->load->model('Model_penjumlahan');
 
-		$this->load->view('biodata_message', $data);
+		$data['nilai1'] = $nilai1;
+		$data['nilai2'] = $nilai2;
+		$data['hasil'] = $this->Model_penjumlahan->jumlah($nilai1, $nilai2);
+
+		$this->load->view('penjumlahan_view', $data);
 	}
 }

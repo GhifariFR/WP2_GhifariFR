@@ -5,14 +5,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Biodata Mahasiswa</title>
+	<title>Form Biodata Mahasiswa</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href= <?= base_url('assets/css/bootstrap.css') ?> >
 </head>
 <body>
-
 	<!-- Navbar bootsrap -->
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container">
@@ -24,10 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a class="nav-link" href="#">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="<?= base_url('biodata/index') ?>">Form</a>
+							<a class="nav-link active" href="<?= base_url('biodata/index') ?>">Form</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="<?= base_url('biodata/form') ?>">Biodata</a>
+							<a class="nav-link" href="<?= base_url('biodata/form') ?>">Biodata</a>
 						</li>
 					</ul>
 				</div>
@@ -38,25 +37,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</nav>
 
-	<!-- Biodata -->
+	<!-- Form input biodata -->
 	<div class="container min-vh-100 align-items-center d-flex justify-content-center">
 	<!-- class container untuk men'center' form memakai 'min-vh-100 align-items-center' untuk vertical & 'd-flex justify-content-center' untuk horizontal-->
 		<div class="card text-center">
 			<div class="card-header">
-				Biodata Mahasiswa
+				Form Biodata Mahasiswa
 			</div>
 			<div class="card-body">
-				<h5 class="card-title"><?= $nama; ?></h5>
-				<p class="card-text">
-					Kelas: <?= $kelas; ?>
-					Nim: <?= $nim; ?>
-				</p>
-				<img src="<?= base_url('assets/img/Default_pfp.png') ?>" class="w-25 h-25 img-thumbnail">
-				<p class="card-text">
-					Mahasiswa Universitas Bina Sarana Informatika</br>
-					Menjalankan Perkuliahan Smester-6</br>
-					Pada Kampus UBSI Slipi
-				</p>
+				<form method="POST" action="<?= base_url('biodata/form') ?>">
+					<p>Masukan biodata mahasiswa</p>
+					<div class="row mb-3">
+						<label for="nama" class="col-3 col-form-label">Nama</label>
+						<div class="col-9">
+							<input name="nama" type="text" class="form-control" requierd>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<label for="kelas" class="col-3 col-form-label">Kelas</label>
+						<div class="col-9">
+							<input name="kelas" type="text" class="form-control" placeholder="17.6A.26" requierd>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<label for="nim" class="col-3 col-form-label">Nim</label>
+						<div class="col-9">
+							<input name="nim" type="text" class="form-control" placeholder="17210721" requierd>
+						</div>
+					</div>
+					<div class="row mb-3">
+						<button type="submit" class="btn btn-primary">Kirim</button>
+					</div>
+				</form>
 			</div>
 			<div class="card-footer text-body-secondary">
 				Mata Kuliah Web Programing II
