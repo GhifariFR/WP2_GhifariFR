@@ -12,32 +12,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<link rel="stylesheet" href= <?= base_url('assets/css/bootstrap.css') ?> >
 </head>
 <body>
-
-	<!-- Navbar bootsrap -->
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container">
-			<a class="navbar-brand" href="#">Ghifari</a>
-			<div>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="<?= base_url('biodata/index') ?>">Form</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="<?= base_url('biodata/form') ?>">Biodata</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		</div>
-	</nav>
-
 	<!-- Biodata -->
 	<div class="container min-vh-100 align-items-center d-flex justify-content-center">
 	<!-- class container untuk men'center' form memakai 'min-vh-100 align-items-center' untuk vertical & 'd-flex justify-content-center' untuk horizontal-->
@@ -46,10 +20,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				Biodata Mahasiswa
 			</div>
 			<div class="card-body">
-				<h5 class="card-title"><?= $nama; ?></h5>
+				<h5 class="card-title"><?= is_null($nama) ? 'null' : $nama; ?></h5>
 				<p class="card-text">
-					Kelas: <?= $kelas; ?>
-					Nim: <?= $nim; ?>
+					Kelas: <?= is_null($kelas) ? 'null' : $kelas; ?>
+					Nim: <?= is_null($nim) ? 'null' : $nim; ?>
 				</p>
 				<img src="<?= base_url('assets/img/Default_pfp.png') ?>" class="w-25 h-25 img-thumbnail">
 				<p class="card-text">
