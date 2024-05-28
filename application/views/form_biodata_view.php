@@ -25,19 +25,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="row mb-3">
 						<label for="nama" class="col-3 col-form-label">Nama</label>
 						<div class="col-9">
-							<input name="nama" type="text" class="form-control" requierd>
+							<input value="<?= set_value('nama') ?>" name="nama" type="text" class="form-control" requierd>
+							<?php echo form_error('nama'); ?>
 						</div>
 					</div>
 					<div class="row mb-3">
 						<label for="kelas" class="col-3 col-form-label">Kelas</label>
 						<div class="col-9">
-							<input name="kelas" type="text" class="form-control" placeholder="17.6A.26" requierd>
+							<input value="<?= set_value('kelas') ?>" name="kelas" type="text" class="form-control" placeholder="17.6A.26" requierd>
+							<?php echo form_error('kelas'); ?>
 						</div>
 					</div>
 					<div class="row mb-3">
 						<label for="nim" class="col-3 col-form-label">Nim</label>
 						<div class="col-9">
-							<input name="nim" type="text" class="form-control" placeholder="17210721" requierd>
+							<input value="<?= set_value('nim') ?>" name="nim" type="text" class="form-control" placeholder="17210721" requierd>
+							<?php echo form_error('nim'); ?>
 						</div>
 					</div>
 					<div class="row mb-3">

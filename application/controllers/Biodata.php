@@ -40,16 +40,16 @@ class Biodata extends CI_Controller {
 		// Librari peraturan validasi isi Form
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama', 'Nama Mahasiswa', 'required|min_length[3]', [
-			'required' => 'Nama Mahasiswa Harus diisi',
-			'min_length' => 'Nama yang dimasukan terlalu pendek atau tidak benar'
+			'required' => 'Nama Harus di isi!',
+			'min_length' => 'Nama terlalu pendek'
 		]);
 		$this->form_validation->set_rules('kelas', 'Kelas Mahasiswa', 'required|min_length[3]', [
-			'required' => 'Kelas Mahasiswa Harus diisi',
-			'min_length' => 'Kelas yang dimasukan terlalu pendek atau tidak benar'
+			'required' => 'Kelas Harus di isi!',
+			'min_length' => 'Kelas terlalu pendek'
 		]);
-		$this->form_validation->set_rules('kelas', 'Kelas Mahasiswa', 'required|min_length[3]', [
-			'required' => 'Kelas Mahasiswa Harus diisi',
-			'min_length' => 'Kelas yang dimasukan terlalu pendek atau tidak benar'
+		$this->form_validation->set_rules('nim', 'Nim Mahasiswa', 'required|min_length[3]', [
+			'required' => 'Nim Harus di isi!',
+			'min_length' => 'Nim terlalu pendek'
 		]);
 
 		// Memvalidasi isi form
@@ -57,7 +57,6 @@ class Biodata extends CI_Controller {
 			$this->load->view('form_biodata_view');
 		}else {
 			$data = array(
-				'title' => 'Biodata Mahasiswa',
 				'nama' => $this->input->post('nama'),
 				'kelas' => $this->input->post('kelas'),
 				'nim' => $this->input->post('nim')
